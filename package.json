@@ -1,0 +1,13 @@
+{
+  "name": "thepostingtool-site",
+  "version": "1.0.0",
+  "description": "Website for The Posting Tool (thepostingtool.com): free, open-source multi-platform poster.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

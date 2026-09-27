@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Posting Tool Pinterest — The Posting Tool</title>
+    <meta name="description" content="Posting Tool Pinterest needs a Business account before you connect — Business is required to schedule. Free and open source. Not a Pinterest ads tool." />
+    <link rel="canonical" href="https://thepostingtool.com/pinterest" />
+    <meta property="og:title" content="Posting Tool Pinterest — The Posting Tool" />
+    <meta property="og:description" content="Posting Tool Pinterest needs a Business account before you connect — Business is required to schedule. Free and open source. Not a Pinterest ads tool." />
+    <meta property="og:url" content="https://thepostingtool.com/pinterest" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=oss1" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-stack">
+            <strong>The Posting Tool</strong>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <nav id="site-nav" class="nav-links" aria-label="Primary">
+          <a href="/#projects">Projects</a>
+          <a href="/#how">How it works</a>
+          <a href="/setup">Setup guide</a>
+          <a href="/compare">Compare</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/terms">License</a>
+          <a class="btn btn-primary btn-sm" href="https://github.com/okwithit9-debug/the-posting-tool">Get it on GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="doc-hero">
+        <div class="wrap">
+          <div class="eyebrow"><span class="dot"></span> Platform · Pinterest</div>
+          <h1>Posting Tool Pinterest</h1>
+          <p class="doc-lede">
+            Business before connect — required to schedule. Personal accounts cannot schedule. Not a Pinterest ads tool.
+          </p>
+          <nav class="doc-toc" aria-label="On this page">
+            <a href="#posts">What it posts</a>
+            <a href="#who">Who it is for</a>
+            <a href="#need">Before connect</a>
+            <a href="#connect">How you connect</a>
+            <a href="#everyday">Everyday use</a>
+            <a href="#limits">Limits</a>
+            <a href="#other">Other platforms</a>
+          </nav>
+        </div>
+      </section>
+
+      <div class="wrap doc-main">
+        <article class="doc-section" id="posts">
+          <h2>What it posts</h2>
+          <p>
+            Posts from your inbox to a <strong>Pinterest Business</strong> account you own.
+            Pinterest Business is what lets scheduling work.
+          </p>
+        </article>
+        <article class="doc-section" id="who">
+          <h2>Who it is for</h2>
+          <p>
+            People who own a Pinterest account and will convert it to Business so scheduling can run.
+            Not a Pinterest ads tool. It does not run ads for you.
+          </p>
+        </article>
+        <article class="doc-section" id="need">
+          <h2>What you need before connect</h2>
+          <div class="need-box">
+            <ul class="feature-list">
+              <li><strong>Pinterest Business</strong> — convert first. Required to schedule.</li>
+              <li>Stay logged into that Business account in Chrome.</li>
+              <li>Project folder cloned from GitHub.</li>
+            </ul>
+          </div>
+          <div class="warn-box">
+            <strong>Personal account = scheduling will not work.</strong>
+            Convert first. A personal account is a Pinterest limit, not a defect in the tool.
+          </div>
+        </article>
+        <article class="doc-section" id="connect">
+          <h2>How you connect</h2>
+          <p>Convert to Business first. Then run the login helper and sign into the Business account:</p>
+<pre class="code">python3 setup_playwright_logins.py</pre>
+          <p>Checkpoint: <a href="/setup#accounts">Setup guide → Business accounts</a>.</p>
+        </article>
+        <article class="doc-section" id="everyday">
+          <h2>Everyday use</h2>
+          <p>
+            Drop a video and a matching <code class="inline">.json</code> sidecar into <code class="inline">inbox/</code>
+            (same base name). Run <code class="inline">./posting_tool_go.command</code> or
+            <code class="inline">python3 schedule_batch.py dispatch</code>.
+            Do not run two dispatches at once. Check <code class="inline">posted/</code> or
+            <code class="inline">failed/</code> + screenshots.
+          </p>
+          <p>Beginner walkthrough: <a href="/setup#everyday">Setup guide → Everyday use</a>.</p>
+        </article>
+        <article class="doc-section" id="limits">
+          <h2>Limits / account-type warnings</h2>
+          <p>
+            Pinterest Business is required to schedule. This is <strong>not a Pinterest ads tool</strong>.
+            If Pinterest fails right after connect, confirm the account is Business, convert, then run the login helper and sign in again.
+          </p>
+        </article>
+        <article class="doc-section" id="other">
+          <h2>Other platforms</h2>
+          <p>The other supported platforms:</p>
+          <p><a class="chip" href="/x">X</a> <a class="chip" href="/threads">Threads</a> <a class="chip" href="/tiktok">TikTok</a> <a class="chip" href="/youtube">YouTube</a> <a class="chip" href="/instagram">Instagram</a></p>
+          <p>
+            Hub: <a href="/platforms">Posting Tool platforms</a>.
+          </p>
+          <p>
+            <a class="btn btn-primary" href="https://github.com/okwithit9-debug/the-posting-tool">Get it on GitHub</a>
+            <a class="btn btn-ghost" href="https://github.com/okwithit9-debug/open-source-clipper">Open Source Clipper</a>
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <div class="footer-stack">
+          <div>
+            <strong style="color: var(--text)">The Posting Tool</strong>
+            · <a href="/">Home</a>
+            · <a href="/setup">Setup</a>
+            · <a href="/terms">License (MIT)</a>
+            · <a href="https://github.com/okwithit9-debug/the-posting-tool">GitHub</a>
+            · <a href="/#projects">Projects</a>
+            · <a href="https://github.com/okwithit9-debug/open-source">All projects in one place</a>
+            · <a href="/compare">Compare</a>
+            · <a href="/platforms">Platforms</a>
+          </div>
+          <div class="footer-links" aria-label="Platforms">
+            <a class="chip" href="/x">X</a>
+            <a class="chip" href="/threads">Threads</a>
+            <a class="chip" href="/tiktok">TikTok</a>
+            <a class="chip" href="/pinterest">Pinterest</a>
+            <a class="chip" href="/youtube">YouTube</a>
+            <a class="chip" href="/instagram">Instagram</a>
+          </div>
+        </div>
+        <div>
+          Built by <a href="https://x.com/CryptoBandit100" target="_blank" rel="noopener" aria-label="Built by @CryptoBandit100 on X">@CryptoBandit100 on X</a>
+        </div>
+        <div>
+          Support:
+          <a href="mailto:support@thepostingtool.com">support@thepostingtool.com</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/nav.js?v=oss1"></script>
+  </body>
+</html>

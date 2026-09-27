@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Setup guide — The Posting Tool</title>
+    <meta
+      name="description"
+      content="Simple beginner setup guide for the Posting Tool: install, connect accounts, first test post."
+    />
+    <link rel="canonical" href="https://thepostingtool.com/setup" />
+    <meta property="og:title" content="Setup guide — The Posting Tool" />
+    <meta property="og:description" content="Simple beginner setup guide for the Posting Tool: install, connect accounts, first test post." />
+    <meta property="og:url" content="https://thepostingtool.com/setup" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=oss1" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-stack">
+            <strong>The Posting Tool</strong>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <nav id="site-nav" class="nav-links" aria-label="Primary">
+          <a href="/#projects">Projects</a>
+          <a href="/#how">How it works</a>
+          <a href="/setup">Setup guide</a>
+          <a href="/compare">Compare</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/terms">License</a>
+          <a class="btn btn-primary btn-sm" href="https://github.com/okwithit9-debug/the-posting-tool">Get it on GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="doc-hero">
+        <div class="wrap">
+          <div class="eyebrow"><span class="dot"></span> Friendly setup · start here</div>
+          <h1>Setup guide</h1>
+          <p class="doc-lede">
+            Follow these steps once. Short sentences. One action at a time.
+            This covers the supported platforms:
+            <strong>X, Threads, TikTok, Pinterest, YouTube, and Instagram</strong>.
+          </p>
+          <p class="doc-lede" style="margin-top:-0.5rem">
+            Mac is the main path below. Windows and Linux notes are called out where paths differ.
+            If you want extra technical detail later, open <code class="inline">INSTALL.md</code> in your project folder.
+          </p>
+          <nav class="doc-toc" aria-label="Guide sections">
+            <a href="#ai-help">Use AI</a>
+            <a href="#ai-fix">AI fix</a>
+            <a href="#before">Before you start</a>
+            <a href="#install">Install</a>
+            <a href="#connect">Connect accounts</a>
+            <a href="#accounts">Business accounts</a>
+            <a href="#instagram">Instagram</a>
+            <a href="#test">First test</a>
+            <a href="#everyday">Everyday use</a>
+            <a href="#troubleshoot">Troubleshooting</a>
+            <a href="#support">Support</a>
+          </nav>
+        </div>
+      </section>
+
+      <div class="wrap doc-main">
+        <article class="doc-section ai-help" id="ai-help">
+          <h2>Use AI to help you set up</h2>
+          <p>This is the fastest way to get set up. You also make fewer mistakes.</p>
+          <p>
+            Paste this guide (or <code class="inline">SETUP.md</code> from your project folder) into
+            ChatGPT, Claude, or Grok. Let the AI walk you one step at a time.
+            If the AI gets stuck, open a <a href="https://github.com/okwithit9-debug/the-posting-tool/issues">GitHub Issue</a>.
+          </p>
+          <h3>How</h3>
+          <ol>
+            <li>Open ChatGPT, Claude, or Grok.</li>
+            <li>Attach or paste this Setup guide (or <code class="inline">SETUP.md</code> from your project folder).</li>
+            <li>Paste the prompt below.</li>
+            <li>Do each step. Stop at every <strong>You should see…</strong> checkpoint. Tell the AI what you saw before it continues.</li>
+          </ol>
+          <p>Copy this prompt:</p>
+<pre class="code">I'm setting up Posting Tool on my computer. Walk me through SETUP.md one step at a time. Do not skip checkpoints. Wait for me to confirm each step before going to the next.
+
+I'm on a Mac (tell me if Windows/Linux is different).
+Platforms I'm using: [list them — X, Threads, TikTok, Pinterest, YouTube, Instagram as needed].
+The project folder is: [paste path after I clone it].
+
+Rules:
+- Never invent commands that aren't in SETUP.md or the repo.
+- If something looks like a secret (tokens, passwords), tell me not to paste it into chat.
+- If a step fails, help me use the Troubleshooting section before guessing.
+- If I'm using Instagram, TikTok, or Pinterest: stop until I confirm TikTok and Pinterest are Business, and Instagram is Business or Creator (not Personal). For Instagram: if the account is already Professional and the Schedule content switch is missing, keep going. The tool still posts. It publishes now instead of scheduling a time.</pre>
+          <div class="warn-box">
+            <strong>Do not paste secrets.</strong>
+            Never paste passwords, cookies, or token files into the AI.
+            If a file looks secret, tell the AI you have it — do not paste the contents.
+          </div>
+          <p>Still do the checkpoints in this guide. If the AI skips a “You should see…” line, stop and do it anyway.</p>
+
+          <h3 id="ai-fix">When something fails — use AI to fix it</h3>
+          <p>
+            Paste this guide (or <code class="inline">SETUP.md</code>) plus the error into
+            ChatGPT, Claude, or Grok.
+          </p>
+          <p>Give the AI:</p>
+          <ol>
+            <li>This Setup guide (or <code class="inline">SETUP.md</code> from your project folder).</li>
+            <li>The <strong>error text</strong> from Terminal (the red lines / traceback).</li>
+            <li>What you see in <code class="inline">failed/</code> (paste the receipt text, or describe the filename).</li>
+            <li>
+              What you see in <code class="inline">logs/screenshots/</code> —
+              <strong>describe</strong> the screenshot (login wall, missing button, error banner).
+              Do <strong>not</strong> upload screenshots that show passwords, cookies, tokens, or other secrets.
+            </li>
+          </ol>
+          <p>Copy this prompt:</p>
+<pre class="code">Something failed while setting up Posting Tool. Help me fix it using SETUP.md.
+
+Platforms I'm using: [list them — X, Threads, TikTok, Pinterest, YouTube, Instagram as needed].
+The project folder is: [path].
+
+Error text:
+[paste the Terminal error]
+
+What I see in failed/:
+[paste receipt text or describe]
+
+What I see in logs/screenshots/:
+[describe the screenshot — do not upload secrets]
+
+Rules:
+- Never invent commands that aren't in SETUP.md or the repo.
+- Do not ask me for passwords, cookies, or tokens. If a file looks secret, tell me not to paste it.
+- Use the Troubleshooting section in SETUP.md first, before guessing.
+- If I'm using Instagram, TikTok, or Pinterest: confirm TikTok and Pinterest are Business, and Instagram is Business or Creator (not Personal). For Instagram: if the account is already Professional and the Schedule content switch is missing, keep going. The tool still posts. It publishes now instead of scheduling a time.</pre>
+          <p>
+            Try the AI install prompt and this AI fix prompt first. If you are still stuck, open a
+            <a href="https://github.com/okwithit9-debug/the-posting-tool/issues">GitHub Issue</a>.
+          </p>
+        </article>
+
+        <article class="doc-section" id="before">
+          <h2>A. Before you start</h2>
+          <p>Check these off first:</p>
+          <ol>
+            <li>Use a <strong>Mac</strong> if you can (easiest). Windows and Linux work too.</li>
+            <li>Create (or already have) login accounts for the platforms you use:
+              <strong>X</strong>, <strong>Threads</strong>, <strong>TikTok</strong>, <strong>Pinterest</strong>, <strong>YouTube</strong>, and/or <strong>Instagram</strong>.</li>
+            <li>If you use Instagram, TikTok, or Pinterest: convert TikTok and Pinterest to <strong>Business</strong>, and Instagram to <strong>Business</strong> or <strong>Creator</strong>, first. Make Instagram <strong>public</strong>. See <a href="#accounts">Business accounts</a>. Do this before you log in.</li>
+            <li>Install <strong>Google Chrome</strong> (your normal browser for those sites).</li>
+            <li>You will install some <strong>Python tools</strong> one time (Python is a free helper program).</li>
+            <li>Clone the project:
+              <code class="inline">git clone https://github.com/okwithit9-debug/the-posting-tool ~/posting-tool</code>
+              (or on GitHub, <strong>Code → Download ZIP</strong>).</li>
+          </ol>
+          <div class="note-box">
+            <strong style="color:var(--text)">Tip:</strong>
+            Keep that project folder somewhere easy to find. All videos go into its
+            <code class="inline">inbox/</code> folder later.
+          </div>
+        </article>
+
+        <article class="doc-section" id="install">
+          <h2>B. Install (one time)</h2>
+
+          <h3>1. Install Python (if needed)</h3>
+          <ol>
+            <li>Open <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a>.</li>
+            <li>Download the latest Python 3 for your computer.</li>
+            <li>Run the installer.</li>
+            <li>On Mac, if you see a checkbox for <strong>Install Certificates</strong>, turn it on.</li>
+            <li>On Windows, turn on <strong>Add python.exe to PATH</strong> before you click Install.</li>
+          </ol>
+          <span class="check">a Terminal window where typing <code class="inline">python3 --version</code> prints a version like <code class="inline">Python 3.12.x</code> (Windows may use <code class="inline">python --version</code>).</span>
+
+          <h3>2. Open Terminal</h3>
+          <ol>
+            <li>On Mac: press <strong>Command + Space</strong>, type <strong>Terminal</strong>, press <strong>Return</strong>.</li>
+            <li>On Windows: open <strong>Command Prompt</strong> or <strong>PowerShell</strong>.</li>
+            <li>On Linux: open your terminal app.</li>
+          </ol>
+
+          <h3>3. Go into the project folder</h3>
+          <p>Type this, then press Return (change the path if your folder is elsewhere):</p>
+<pre class="code">cd ~/posting-tool</pre>
+          <p>Windows example:</p>
+<pre class="code">cd %USERPROFILE%\posting-tool</pre>
+          <span class="check">the folder name in the prompt, and no “No such file” error.</span>
+
+          <h3>4. Install the Python dependencies</h3>
+<pre class="code">pip3 install -r requirements.txt</pre>
+          <p>Windows note: if <code class="inline">pip3</code> is not found, try <code class="inline">pip install -r requirements.txt</code>.</p>
+
+          <h3>5. Install the browser helper</h3>
+<pre class="code">python3 -m playwright install chromium</pre>
+          <p>Windows note: if needed, use <code class="inline">python -m playwright install chromium</code>.</p>
+          <span class="check">the install finish with <strong>no red errors</strong>. Yellow download progress is fine.</span>
+
+          <h3>6. Copy the sample settings file</h3>
+<pre class="code">cp config.example.json config.json</pre>
+          <p>Windows:</p>
+<pre class="code">copy config.example.json config.json</pre>
+          <p>You can leave most settings alone for your first test. YouTube needs a Google allow step later (see Connect).</p>
+        </article>
+
+        <article class="doc-section" id="connect">
+          <h2>C. Connect your accounts</h2>
+          <p>
+            The tool uses its <strong>own Chrome profile</strong> (a separate browser home).
+            You must be logged in there for X, Threads, TikTok, Pinterest, and Instagram.
+            YouTube uses a separate Google allow screen.
+          </p>
+          <div class="warn-box">
+            <strong>Instagram, TikTok, and Pinterest first, if you use them.</strong>
+            Those three need a <strong>Business</strong> account before you log in
+            (Instagram can also be <strong>Creator</strong>). Make Instagram public first.
+            Look for Instagram’s <strong>Schedule content</strong> switch. If it is missing on a Professional account, keep going — the tool still posts now.
+            Full steps: <a href="#accounts">Business accounts</a>.
+          </div>
+
+          <h3>Log in with the login helper</h3>
+          <ol>
+            <li>In Terminal, from the project folder, run:</li>
+          </ol>
+<pre class="code">python3 setup_playwright_logins.py</pre>
+          <ol start="2">
+            <li>A browser window opens. Log into each site you use when asked. For TikTok and Pinterest, use the <strong>Business</strong> account. For Instagram, use the <strong>Business</strong> or <strong>Creator</strong> account.</li>
+            <li>Finish each login until you see your normal home/feed page.</li>
+            <li>Close the helper when done.</li>
+          </ol>
+          <span class="check">your normal home/feed page for each site. You can re-run the helper anytime a login expires.</span>
+          <div class="warn-box">
+            <strong>X note:</strong> X sometimes blocks this helper (the <strong>Next</strong> button freezes, or a “verify you are human” page appears).
+            If that happens, solve the checkbox in regular Chrome, fully quit Chrome, then run the helper again
+            (or run <code class="inline">./fix_x_cloudflare.command</code> on Mac).
+          </div>
+
+          <h3>Platform notes</h3>
+          <table class="platform-table">
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Usual path</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>X</strong></td>
+                <td>Login helper. If you see a Cloudflare / “verify you are human” page, see the X note above.</td>
+              </tr>
+              <tr>
+                <td><strong>Threads</strong></td>
+                <td>Login helper.</td>
+              </tr>
+              <tr>
+                <td><strong>TikTok</strong></td>
+                <td>Login helper. Account must be <strong>Business</strong> first — see <a href="#accounts">Business accounts</a>.</td>
+              </tr>
+              <tr>
+                <td><strong>Pinterest</strong></td>
+                <td>Login helper. Account must be <strong>Business</strong> first — see <a href="#accounts">Business accounts</a>.</td>
+              </tr>
+              <tr>
+                <td><strong>Instagram</strong></td>
+                <td>Login helper. Account must be <strong>Business</strong> or <strong>Creator</strong> first — see below. If the Schedule content switch is missing on a Professional account, keep going.</td>
+              </tr>
+              <tr>
+                <td><strong>YouTube</strong></td>
+                <td>Separate OAuth step (Google allow screen). Put your Google client id/secret into <code class="inline">config.json</code> if the README asks for them, then run:</td>
+              </tr>
+            </tbody>
+          </table>
+<pre class="code">python3 setup_youtube_auth.py</pre>
+          <p>A browser opens. Choose your Google account and click <strong>Allow</strong>.</p>
+          <span class="check">the script finish without an error, and a token file appear under <code class="inline">tokens/</code>.</span>
+        </article>
+
+
+        <article class="doc-section" id="accounts">
+          <h2>Instagram, TikTok, and Pinterest — Business accounts required</h2>
+          <p>
+            Read this before you log in.
+            If you use Instagram, TikTok, or Pinterest, convert TikTok and Pinterest to
+            <strong>Business</strong> first. Instagram can be <strong>Business</strong> or <strong>Creator</strong>.
+            A personal account will look broken. It is not broken.
+          </p>
+          <div class="warn-box">
+            <strong>Personal account = the tool cannot do the job on that platform.</strong>
+            Convert first. Do not open an issue until TikTok and Pinterest are Business, and Instagram is Business or Creator.
+          </div>
+          <h3>TikTok</h3>
+          <p>Business is required for the link in bio on new accounts and accounts under 1k followers.</p>
+          <ol>
+            <li>Open the TikTok app or tiktok.com while logged in.</li>
+            <li>Switch the account to a <strong>Business</strong> account in settings.</li>
+            <li>Use that Business account when you run the login helper.</li>
+          </ol>
+          <h3>Pinterest</h3>
+          <p>Business is required for scheduling.</p>
+          <ol>
+            <li>Open the Pinterest app or pinterest.com while logged in.</li>
+            <li>Convert the account to a <strong>Business</strong> account in settings.</li>
+            <li>Use that Business account when you run the login helper.</li>
+          </ol>
+          <p>Instagram has extra steps (look for the Schedule content switch; keep going if a Professional account is missing it). Those are in the next section.</p>
+        </article>
+        <article class="doc-section" id="instagram">
+          <h2>Instagram — Business or Creator required</h2>
+          <p>
+            Read this before you log in.
+            <strong>Business</strong> or <strong>Creator</strong> required.
+            <strong>Personal</strong> = stop.
+          </p>
+          <div class="warn-box">
+            <strong>Personal account = stop.</strong>
+            Convert to Business or Creator and make the account public first.
+            If the account is already Professional and the Schedule content switch is missing, keep going. The tool still posts now.
+          </div>
+          <h3>Convert the account first</h3>
+          <ol>
+            <li>Open the <strong>Instagram app</strong> or <strong>instagram.com</strong> in Chrome.</li>
+            <li>Go to <strong>Settings → Account type / Professional</strong>.</li>
+            <li>Switch the account to <strong>Business</strong> (preferred) or <strong>Creator</strong>.</li>
+            <li>Make the account <strong>public</strong>.</li>
+          </ol>
+          <p>
+            <strong>Business</strong> is preferred. <strong>Creator</strong> also works.
+            <strong>Personal does not.</strong>
+          </p>
+          <h3>Checkpoint — do this before the first dispatch</h3>
+          <ol>
+            <li>Stay logged into <strong>that Business or Creator account</strong> in the tool’s browser. The login helper needs that session.</li>
+            <li>On the web, start a Reel / post as if you were going to publish.</li>
+            <li>Look for a <strong>Schedule content</strong> switch in the composer.</li>
+          </ol>
+          <span class="check">the account is <strong>Business</strong> or <strong>Creator</strong> (not Personal). If the Schedule content switch is there, the tool can pick a time. If it is missing on a Professional account, keep going.</span>
+          <p>
+            If the switch is there: the tool can pick a time. Same-day time scheduling is what ships.
+          </p>
+          <p>
+            If the account is already <strong>Professional</strong> (Business or Creator) and the switch is <strong>missing</strong>: <strong>keep going</strong>.
+            The tool still posts. It publishes <strong>now</strong> instead of scheduling a time. That is the fallback.
+            Instagram often hides the switch for days after you convert. This is not a broken tool.
+            <strong>Do not open an issue</strong> only because the switch is missing.
+          </p>
+          <p>
+            If the account is still <strong>Personal</strong>: <strong>stop</strong>. Convert. Make it public. Personal cannot use the tool.
+          </p>
+          <h3>What Instagram can do in the tool today</h3>
+          <ul>
+            <li><strong>Same-day time scheduling</strong> is what ships when the Schedule content switch is there. Other dates may publish <strong>now</strong> (fallback).</li>
+            <li>If the switch is missing on a Professional account, or the time cannot be set, the tool publishes <strong>now</strong> rather than using Instagram’s default time.</li>
+            <li>You must be logged into that Business or Creator account through the login helper.</li>
+          </ul>
+        </article>
+
+        <article class="doc-section" id="test">
+          <h2>D. First test (do this before real posts)</h2>
+          <p>One small test catches most “it doesn’t work” problems early.</p>
+          <ol>
+            <li>Put <strong>one</strong> short test video into the <code class="inline">inbox/</code> folder.
+              Example name: <code class="inline">test_clip.mp4</code>.</li>
+            <li>In the same <code class="inline">inbox/</code> folder, create a matching sidecar file named
+              <code class="inline">test_clip.json</code> (same name as the video, but <code class="inline">.json</code>).</li>
+            <li>Paste this minimal example into the file (edit the caption text if you want):</li>
+          </ol>
+<pre class="code">{
+  "title": "My first test",
+  "platforms": ["x"],
+  "captions": {
+    "x": {
+      "caption": "Test post from Posting Tool
+
+#Test"
+    }
+  }
+}</pre>
+          <p>
+            For multiple platforms, you can list more platforms, for example
+            <code class="inline">["x", "threads", "tiktok"]</code> or
+            <code class="inline">["instagram"]</code>, and add matching caption blocks.
+            Start with <strong>one</strong> platform for the first test.
+            If that platform is Instagram, TikTok, or Pinterest, finish the <a href="#accounts">Business checkpoint</a> first.
+          </p>
+          <ol start="4">
+            <li>Run the go command from the project folder:</li>
+          </ol>
+<pre class="code">./posting_tool_go.command</pre>
+          <p>Or:</p>
+<pre class="code">python3 schedule_batch.py dispatch</pre>
+          <p>On Mac you can also double-click <strong>posting_tool_go.command</strong> in Finder (approve it once if macOS asks).</p>
+          <ol start="5">
+            <li>Wait until Terminal finishes.</li>
+          </ol>
+          <span class="check">
+            if it worked: a receipt under <code class="inline">posted/</code> (often inside a date folder).
+            If it failed: a receipt under <code class="inline">failed/</code>, plus a screenshot in
+            <code class="inline">logs/screenshots/</code>. Open the screenshot — it usually shows the exact problem.
+          </span>
+        </article>
+
+        <article class="doc-section" id="everyday">
+          <h2>E. Everyday use</h2>
+          <ol>
+            <li>Drop your video and matching <code class="inline">.json</code> sidecar into <code class="inline">inbox/</code>.</li>
+            <li>Names must match: <code class="inline">my_video.mp4</code> + <code class="inline">my_video.json</code>.</li>
+            <li>Run <code class="inline">./posting_tool_go.command</code> (or the Python dispatch command).</li>
+            <li><strong>Do not run two dispatches at once.</strong> Wait for one to finish.</li>
+            <li>Check <code class="inline">posted/</code> for success or <code class="inline">failed/</code> + screenshots if something breaks.</li>
+          </ol>
+        </article>
+
+        <article class="doc-section" id="troubleshoot">
+          <h2>F. Troubleshooting (top problems)</h2>
+          <p>
+            If a step fails, use the <a href="#ai-fix">AI fix prompt</a> first:
+            paste this guide + the error + what you see in <code class="inline">failed/</code>
+            and <code class="inline">logs/screenshots/</code> (describe the screenshot; do not upload secrets).
+            Then open a GitHub Issue if you are still stuck.
+          </p>
+          <ol>
+                        <li>
+              <strong>Logged out / session expired</strong>.
+              Run <code class="inline">python3 setup_playwright_logins.py</code> again and sign back in.
+            </li>
+            <li>
+              <strong>X shows a Cloudflare / access / “verify you are human” page</strong>.
+              Solve the checkbox in regular Chrome, quit Chrome, then run the login helper again or run
+              <code class="inline">./fix_x_cloudflare.command</code>.
+            </li>
+            <li>
+              <strong>YouTube token expired</strong>.
+              Run <code class="inline">python3 setup_youtube_auth.py</code> again and click <strong>Allow</strong>.
+            </li>
+            <li>
+              <strong>Nothing in inbox / bad sidecar name</strong>.
+              Video and JSON must sit in <code class="inline">inbox/</code> and share the same base name
+              (example: <code class="inline">test_clip.mp4</code> + <code class="inline">test_clip.json</code>).
+            </li>
+            <li>
+              <strong>Instagram has no Schedule content switch</strong>.
+              Check the account type first. If it is still Personal: convert to Business or Creator, make it public, then retry.
+              Personal cannot use the tool.
+              If it is already Professional (Business or Creator): keep going. The tool still posts. It publishes now instead of scheduling a time.
+              Instagram often hides the switch for days after you convert. That is not a broken tool.
+              Do not open an issue only because the switch is missing.
+            </li>
+            <li>
+              <strong>TikTok or Pinterest fails right after connect</strong>.
+              Confirm the account is <strong>Business</strong>, not personal. Convert, then run the login helper and sign in again.
+            </li>
+          </ol>
+        </article>
+
+        <article class="doc-section" id="support">
+          <h2>G. Support</h2>
+          <p>Try the <a href="#ai-help">AI walkthrough</a> first, then the <a href="#ai-fix">AI fix prompt</a> if something fails.</p>
+          <p>Still stuck? Open a <a href="https://github.com/okwithit9-debug/the-posting-tool/issues">GitHub Issue</a>. General contact: <a href="mailto:support@thepostingtool.com">support@thepostingtool.com</a>.</p>
+          <p>Please include:</p>
+          <ul>
+                        <li>Which <strong>platform</strong> failed</li>
+            <li>A <strong>screenshot</strong> (from <code class="inline">logs/screenshots/</code> if you have one)</li>
+            <li>The <strong>failed receipt</strong> from the <code class="inline">failed/</code> folder (or paste its text)</li>
+            <li>If Instagram, TikTok, or Pinterest: confirm TikTok and Pinterest are <strong>Business</strong>, and Instagram is <strong>Business</strong> or <strong>Creator</strong> (not Personal). Do not open an issue only because the Instagram Schedule content switch is missing.</li>
+          </ul>
+          <p class="footnote" style="margin:0.75rem 0 0">
+            Want more detail after you are comfortable? Open <code class="inline">INSTALL.md</code> in your project folder.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <div class="footer-stack">
+          <div>
+            <strong style="color: var(--text)">The Posting Tool</strong>
+            · <a href="/">Home</a>
+            · <a href="/setup">Setup</a>
+            · <a href="/terms">License (MIT)</a>
+            · <a href="https://github.com/okwithit9-debug/the-posting-tool">GitHub</a>
+            · <a href="/#projects">Projects</a>
+            · <a href="https://github.com/okwithit9-debug/open-source">All projects in one place</a>
+            · <a href="/compare">Compare</a>
+            · <a href="/platforms">Platforms</a>
+          </div>
+          <div class="footer-links" aria-label="Platforms">
+            <a class="chip" href="/x">X</a>
+            <a class="chip" href="/threads">Threads</a>
+            <a class="chip" href="/tiktok">TikTok</a>
+            <a class="chip" href="/pinterest">Pinterest</a>
+            <a class="chip" href="/youtube">YouTube</a>
+            <a class="chip" href="/instagram">Instagram</a>
+          </div>
+        </div>
+        <div>
+          Built by <a href="https://x.com/CryptoBandit100" target="_blank" rel="noopener" aria-label="Built by @CryptoBandit100 on X">@CryptoBandit100 on X</a>
+        </div>
+        <div>
+          Support:
+          <a href="mailto:support@thepostingtool.com">support@thepostingtool.com</a>
+        </div>
+      </div>
+    </footer>
+      <script src="/nav.js?v=oss1"></script>
+  </body>
+</html>
