@@ -180,6 +180,9 @@ a.plat{text-decoration:none;color:inherit}
 .nav-toggle{display:none;margin-left:auto;background:transparent;border:2px solid var(--line2);border-radius:10px;width:42px;height:38px;padding:8px;cursor:pointer;flex-direction:column;justify-content:space-between}
 .nav-toggle span{display:block;height:2px;background:var(--text);border-radius:2px}
 footer .wrap{grid-template-columns:1.4fr 1fr 1fr 1fr}
+footer .wrap>div{min-width:0}#support-email{overflow-wrap:anywhere}
+@media (max-width:900px){footer .wrap{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){footer .wrap{grid-template-columns:1fr}}
 .links a,.logo{white-space:nowrap}
 @media (max-width:1100px){
  .links{display:none}
