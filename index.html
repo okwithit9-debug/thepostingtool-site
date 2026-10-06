@@ -192,6 +192,19 @@ footer .wrap>div{min-width:0}#support-email{overflow-wrap:anywhere}
 }
 @media (max-width:900px){ .run{grid-template-columns:1fr} }
 @media (max-width:620px){ .nav-cta{display:none} }
+/* security dashboard feature */
+.secdash{margin-top:16px;display:grid;grid-template-columns:1fr 1.15fr;gap:24px;align-items:center;background:var(--card);border:2px solid var(--text);border-radius:var(--r);padding:24px;box-shadow:6px 6px 0 var(--acc2)}
+.secdash .copy-col{display:flex;flex-direction:column;gap:10px;min-width:0}
+.secdash .top{display:flex;align-items:center;gap:10px;font:600 13px var(--mono);color:var(--muted)}
+.secdash h3{margin:0;font-size:24px;letter-spacing:-.02em}
+.secdash p{margin:0;color:var(--muted);font-size:15px}
+.secdash p b{color:var(--text)}
+.secdash .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.secdash .vid{position:relative;display:block;border:2px solid var(--text);border-radius:14px;overflow:hidden;background:#000;aspect-ratio:16/9;box-shadow:4px 4px 0 var(--yel)}
+.secdash video{display:block;width:100%;height:100%;object-fit:cover}
+.secdash .tag{position:absolute;top:10px;left:10px;background:var(--acc);color:#0b0d10;font:800 12px var(--mono);padding:5px 9px;border-radius:999px;border:2px solid #0b0d10;transform:rotate(-3deg)}
+@media (max-width:900px){.secdash{grid-template-columns:1fr}.secdash .vid{order:-1}}
+@media (max-width:620px){.secdash{padding:18px;box-shadow:4px 4px 0 var(--acc2)}.secdash .row .btn{flex:1 1 100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -295,11 +308,24 @@ footer .wrap>div{min-width:0}#support-email{overflow-wrap:anywhere}
 <section id="oss"><div class="wrap">
   <span class="kicker">Open source</span>
   <h2>Read it. Fork it. Make it weirder.</h2>
-  <p class="lead">Everything is MIT licensed and lives in the open. Issues and PRs welcome, especially when a platform moves a button again. All three projects live together in <a href="https://github.com/okwithit9-debug/open-source" style="color:var(--acc)">one open-source repo</a>.</p>
+  <p class="lead">Everything is MIT licensed and lives in the open. Issues and PRs welcome, especially when a platform moves a button again. Every project lives together in <a href="https://github.com/okwithit9-debug/open-source" style="color:var(--acc)">one open-source repo</a>.</p>
   <div class="oss">
     <div class="repo"><div class="top">📦 the-posting-tool<span class="lic">MIT</span></div><h3>The Posting Tool</h3><p>Schedules short-form video to X, Threads, TikTok, Instagram, Pinterest and YouTube from your own browser.</p><div class="row"><a class="btn pri sm" href="https://github.com/okwithit9-debug/the-posting-tool">★ GitHub</a><a class="btn ghost sm" href="https://github.com/okwithit9-debug/the-posting-tool/issues">Open an issue</a></div></div>
     <div class="repo"><div class="top">✂️ open-source-clipper<span class="lic">MIT</span></div><h3>Open Source Clipper</h3><p>Cuts long-form videos into short clips on a local model. Feeds the poster.</p><div class="row"><a class="btn ghost sm" href="https://github.com/okwithit9-debug/open-source-clipper">GitHub</a></div></div>
     <div class="repo"><div class="top">🧠 sara-ai<span class="lic">MIT</span></div><h3>Sara AI</h3><p>Open-source home AI node: local LLM chat and image generation behind a friendly UI.</p><div class="row"><a class="btn ghost sm" href="https://github.com/okwithit9-debug/sara-ai">GitHub</a><a class="btn ghost sm" href="https://saraai.chat">Try saraai.chat</a></div></div>
+  </div>
+  <div class="secdash" id="security-dashboard">
+    <div class="copy-col">
+      <div class="top">🔐 cybersecurity/Node dashboard<span class="lic">MIT</span></div>
+      <h3>Home AI lab security dashboard</h3>
+      <p>Built a live security layer for my home AI lab: Mac Studio + 3 DGX Sparks feed one dashboard. Logins, open ports, firewall + SSH config, key/user/startup changes, pending updates, new devices on the network, with a score for each.</p>
+      <p><b>Free and open source, all the security measures built in.</b> Point it at your Mac. 👇</p>
+      <div class="row"><a class="btn pri sm" href="https://github.com/okwithit9-debug/open-source/tree/main/cybersecurity/Node%20dashboard">★ Get the code</a><a class="btn ghost sm" href="https://x.com/CryptoBandit100/status/2107410517556097199">See it on X</a></div>
+    </div>
+    <a class="vid" href="https://x.com/CryptoBandit100/status/2107410517556097199" aria-label="Watch the security dashboard demo on X">
+      <video src="/assets/security-dashboard.mp4" poster="/assets/security-dashboard-poster.jpg" width="640" height="360" muted autoplay loop playsinline preload="metadata" aria-label="Security dashboard demo"></video>
+      <span class="tag">👀 refreshes every few secs</span>
+    </a>
   </div>
   <div class="meme"><span class="e">🫡</span><p><b>Paid tier?</b> Never heard of her. The only license is MIT. Follow the build on <a href="https://x.com/CryptoBandit100" style="color:var(--acc)">X</a>.</p></div>
 </div></section>
@@ -310,7 +336,7 @@ footer .wrap>div{min-width:0}#support-email{overflow-wrap:anywhere}
   <div class="faq">
     <details><summary>What is The Posting Tool?</summary><p>A free, open-source, self-hosted multi-platform poster. You drop a video and a caption file in the inbox, and it schedules or posts to X, Threads, TikTok, Pinterest, YouTube, and Instagram from your own machine.</p></details>
     <details><summary>Is it really free?</summary><p>Yes. It is MIT licensed. There is no paid version, no subscription, and no account with us.</p></details>
-    <details><summary>Where is the code?</summary><p>The Posting Tool: <a href="https://github.com/okwithit9-debug/the-posting-tool">github.com/okwithit9-debug/the-posting-tool</a>. Sara AI: <a href="https://github.com/okwithit9-debug/sara-ai">github.com/okwithit9-debug/sara-ai</a>. Open Source Clipper: <a href="https://github.com/okwithit9-debug/open-source-clipper">github.com/okwithit9-debug/open-source-clipper</a>. All three live together at <a href="https://github.com/okwithit9-debug/open-source">github.com/okwithit9-debug/open-source</a>.</p></details>
+    <details><summary>Where is the code?</summary><p>The Posting Tool: <a href="https://github.com/okwithit9-debug/the-posting-tool">github.com/okwithit9-debug/the-posting-tool</a>. Sara AI: <a href="https://github.com/okwithit9-debug/sara-ai">github.com/okwithit9-debug/sara-ai</a>. Open Source Clipper: <a href="https://github.com/okwithit9-debug/open-source-clipper">github.com/okwithit9-debug/open-source-clipper</a>. Home AI lab security dashboard: <a href="https://github.com/okwithit9-debug/open-source/tree/main/cybersecurity/Node%20dashboard">open-source/cybersecurity/Node dashboard</a>. All of them live together at <a href="https://github.com/okwithit9-debug/open-source">github.com/okwithit9-debug/open-source</a>.</p></details>
     <details><summary>Is Instagram included?</summary><p>Yes. Instagram is one of the six supported platforms. It needs a Business or Creator account; Personal accounts cannot use the tool. If a Professional account is missing the Schedule content switch, the tool still posts now. See the <a href="/setup#instagram">Setup guide</a> for the checkpoint.</p></details>
     <details><summary>Do TikTok and Pinterest need business accounts too?</summary><p>Yes. Pinterest needs Business to schedule. TikTok needs Business for the link in bio if the account is new or under 1k followers. Convert before you connect.</p></details>
     <details><summary>How do I set this up if I'm not technical?</summary><p>Ask the <a href="https://x.ai/bot/VQYoIcMIuXM4w80F8T8SN">Grok Bot</a>, or use ChatGPT, Claude, or Grok with the <a href="/setup">Setup guide</a>.</p></details>
@@ -375,7 +401,7 @@ footer .wrap>div{min-width:0}#support-email{overflow-wrap:anywhere}
 <footer>
   <div class="wrap">
     <div><a class="logo" href="#top"><i>📮</i>The Posting Tool</a><p class="small">Free, MIT open-source multi-platform video scheduler. Built in public by <a href="https://x.com/CryptoBandit100">@CryptoBandit100</a>.</p></div>
-    <div><h4>Project</h4><ul><li><a href="https://x.ai/bot/VQYoIcMIuXM4w80F8T8SN">Grok Bot</a></li><li><a href="https://github.com/okwithit9-debug/the-posting-tool">The Posting Tool on GitHub</a></li><li><a href="https://github.com/okwithit9-debug/open-source">All projects in one place</a></li><li><a href="https://github.com/okwithit9-debug/open-source-clipper">Open Source Clipper</a></li><li><a href="https://saraai.chat">Sara AI</a></li></ul></div>
+    <div><h4>Project</h4><ul><li><a href="https://x.ai/bot/VQYoIcMIuXM4w80F8T8SN">Grok Bot</a></li><li><a href="https://github.com/okwithit9-debug/the-posting-tool">The Posting Tool on GitHub</a></li><li><a href="https://github.com/okwithit9-debug/open-source">All projects in one place</a></li><li><a href="https://github.com/okwithit9-debug/open-source-clipper">Open Source Clipper</a></li><li><a href="https://saraai.chat">Sara AI</a></li><li><a href="https://github.com/okwithit9-debug/open-source/tree/main/cybersecurity/Node%20dashboard">Security dashboard</a></li></ul></div>
     <div><h4>Guides</h4><ul><li><a href="/setup">Setup guide</a></li><li><a href="/compare">Compare</a></li><li><a href="/platforms">Platforms</a></li><li><a href="/terms">License (MIT)</a></li></ul></div>
     <div><h4>Community</h4><ul><li><a href="https://x.com/CryptoBandit100">X / @CryptoBandit100</a></li><li><a href="https://github.com/okwithit9-debug/the-posting-tool/issues">Open an issue</a></li><li><a href="#fund">Fund the compute</a></li><li>Support: <a id="support-email" href="mailto:support@thepostingtool.com">support@thepostingtool.com</a></li></ul></div>
   </div>

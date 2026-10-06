@@ -14,6 +14,9 @@ const TYPES = {
   ".xml": "application/xml; charset=utf-8",
   ".txt": "text/plain; charset=utf-8",
   ".svg": "image/svg+xml",
+  ".jpg": "image/jpeg",
+  ".png": "image/png",
+  ".mp4": "video/mp4",
 };
 
 // Removed pages -> new home.
@@ -29,6 +32,39 @@ const DIRECT_HTML = new Set(["/setup.html", "/terms.html"]);
 
 // Repo files that must never be served.
 const BLOCKED = new Set(["/server.js"]);
+
+// Byte-range responses so <video> works (Safari requires 206 support).
+function sendRange(req, res, file, headers) {
+  fs.stat(file, (err, st) => {
+    if (err || !st.isFile()) return notFound(res);
+    const type = TYPES[path.extname(file)] || "application/octet-stream";
+    const base = Object.assign({ "Content-Type": type, "Accept-Ranges": "bytes" }, headers || {});
+    const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || "");
+    if (!m || (m[1] === "" && m[2] === "")) {
+      res.writeHead(200, Object.assign(base, { "Content-Length": st.size }));
+      if (req.method === "HEAD") return res.end();
+      return fs.createReadStream(file).pipe(res);
+    }
+    let start, end;
+    if (m[1] === "") {
+      start = Math.max(0, st.size - Number(m[2]));
+      end = st.size - 1;
+    } else {
+      start = Number(m[1]);
+      end = m[2] === "" ? st.size - 1 : Math.min(Number(m[2]), st.size - 1);
+    }
+    if (start > end || start >= st.size) {
+      res.writeHead(416, { "Content-Range": "bytes */" + st.size });
+      return res.end();
+    }
+    res.writeHead(206, Object.assign(base, {
+      "Content-Range": "bytes " + start + "-" + end + "/" + st.size,
+      "Content-Length": end - start + 1,
+    }));
+    if (req.method === "HEAD") return res.end();
+    fs.createReadStream(file, { start, end }).pipe(res);
+  });
+}
 
 function send(res, status, file, headers) {
   fs.readFile(file, (err, data) => {
@@ -97,6 +133,7 @@ const server = http.createServer((req, res) => {
   if (ext) {
     const file = path.join(ROOT, pathname);
     if (TYPES[ext] && ext !== ".html" && !BLOCKED.has(pathname) && isFile(file)) {
+      if (ext === ".mp4") return sendRange(req, res, file, { "Cache-Control": "public, max-age=86400" });
       return send(res, 200, file, { "Cache-Control": "public, max-age=3600" });
     }
     return notFound(res);
