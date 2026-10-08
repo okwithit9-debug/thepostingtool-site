@@ -83,6 +83,10 @@ h2{font-size:clamp(34px,5vw,54px)}
 .repo h3{margin:0;font-size:22px;letter-spacing:-.02em}
 .repo p{margin:0;color:var(--muted);font-size:15px;flex:1}
 .repo .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.sara-demo{margin:2px 0 0;width:100%}
+.sara-demo video{display:block;width:100%;max-width:260px;height:auto;margin:0 auto;aspect-ratio:720/1290;object-fit:contain;background:#000;border:2px solid var(--text);border-radius:14px}
+.sara-demo figcaption{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.35;text-align:center}
+@media (max-width:620px){.sara-demo video{max-width:none}}
 .lic{font:600 11px var(--mono);background:var(--glow);color:var(--acc);padding:4px 8px;border-radius:6px;margin-left:auto}
 .meme{margin-top:26px;display:flex;align-items:center;gap:18px;border:2px solid var(--text);border-radius:var(--r);padding:18px 22px;background:var(--bg2);box-shadow:5px 5px 0 var(--yel)}
 .meme .e{font-size:38px}.meme p{margin:0;color:var(--muted)}.meme b{color:var(--text)}
@@ -312,7 +316,7 @@ footer .wrap>div{min-width:0}#support-email{overflow-wrap:anywhere}
   <div class="oss">
     <div class="repo"><div class="top">📦 the-posting-tool<span class="lic">MIT</span></div><h3>The Posting Tool</h3><p>Schedules short-form video to X, Threads, TikTok, Instagram, Pinterest and YouTube from your own browser.</p><div class="row"><a class="btn pri sm" href="https://github.com/okwithit9-debug/the-posting-tool">★ GitHub</a><a class="btn ghost sm" href="https://github.com/okwithit9-debug/the-posting-tool/issues">Open an issue</a></div></div>
     <div class="repo"><div class="top">✂️ open-source-clipper<span class="lic">MIT</span></div><h3>Open Source Clipper</h3><p>Cuts long-form videos into short clips on a local model. Feeds the poster.</p><div class="row"><a class="btn ghost sm" href="https://github.com/okwithit9-debug/open-source-clipper">GitHub</a></div></div>
-    <div class="repo"><div class="top">🧠 sara-ai<span class="lic">MIT</span></div><h3>Sara AI</h3><p>Open-source home AI node: local LLM chat and image generation behind a friendly UI.</p><div class="row"><a class="btn ghost sm" href="https://github.com/okwithit9-debug/sara-ai">GitHub</a></div></div>
+    <div class="repo"><div class="top">🧠 sara-ai<span class="lic">MIT</span></div><h3>Sara AI</h3><figure class="sara-demo"><video src="/assets/sara/sara-demo.mp4" poster="/assets/sara/sara-demo.jpg" width="720" height="1290" controls muted autoplay loop playsinline preload="metadata" aria-label="Sara answering on a home DGX Spark"></video><figcaption>Sara answering on a home DGX Spark (sound on)</figcaption></figure><p>Open-source home AI node: local LLM chat and image generation behind a friendly UI.</p><div class="row"><a class="btn ghost sm" href="https://github.com/okwithit9-debug/sara-ai">GitHub</a></div></div>
   </div>
   <div class="secdash" id="security-dashboard">
     <div class="copy-col">
