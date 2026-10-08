@@ -1078,10 +1078,38 @@ button.tip-copy.is-copied {
   font-size: 13px;
   line-height: 1.35;
 }
+#amazon-samples .samples-feature {
+  margin: 18px auto 0;
+  width: 100%;
+  max-width: 360px;
+}
+#amazon-samples .samples-feature video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #000;
+  border: 2px solid var(--text);
+  border-radius: 14px;
+  box-shadow: 4px 4px 0 var(--yel, #ffd23f);
+}
+#amazon-samples .samples-feature figcaption {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: center;
+}
 #amazon-samples .samples-note {
   margin: 16px 0 0;
   color: var(--faint);
   font: 12px/1.4 var(--mono);
+}
+#amazon-samples .samples-bot {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 15px;
 }
 #amazon-samples .row {
   display: flex;
@@ -1100,4 +1128,5 @@ button.tip-copy.is-copied {
 }
 @media (max-width: 620px) {
   #amazon-samples { padding: 18px; box-shadow: 4px 4px 0 var(--acc2, var(--accent-dim)); }
+  #amazon-samples .samples-feature { max-width: none; }
 }
