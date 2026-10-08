@@ -3,7 +3,7 @@
 Source for [thepostingtool.com](https://thepostingtool.com), the website for **The Posting Tool**, a free, open-source, self-hosted tool that posts your videos to X, Threads, TikTok, Pinterest, YouTube, and Instagram from your own machine.
 
 - The Posting Tool: https://github.com/okwithit9-debug/the-posting-tool
-- Sara AI: https://github.com/okwithit9-debug/sara-ai (live: https://saraai.chat)
+- Sara AI: https://github.com/okwithit9-debug/sara-ai
 - Open Source Clipper: https://github.com/okwithit9-debug/open-source-clipper
 - All projects in one place: https://github.com/okwithit9-debug/open-source
 
