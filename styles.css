@@ -1029,7 +1029,7 @@ button.tip-copy.is-copied {
   color: var(--warn);
 }
 
-/* Sample videos gallery (homepage #amazon-samples). Scoped; does not alter existing rules. */
+/* Sample montage (homepage #amazon-samples). Scoped; does not alter existing rules. */
 #amazon-samples {
   margin-top: 26px;
   background: var(--card, var(--bg-card));
@@ -1043,40 +1043,6 @@ button.tip-copy.is-copied {
   font-size: clamp(22px, 3vw, 32px);
   letter-spacing: -0.02em;
   line-height: 1.15;
-}
-#amazon-samples .samples-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: 18px;
-  align-items: start;
-}
-#amazon-samples .samples-grid figure {
-  margin: 0;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-#amazon-samples .samples-grid video {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  background: #000;
-  border: 2px solid var(--text);
-  border-radius: 14px;
-  box-shadow: 4px 4px 0 var(--yel, #ffd23f);
-}
-#amazon-samples .samples-grid video.ar-1 { aspect-ratio: 1 / 1; }
-#amazon-samples .samples-grid video.ar-near { aspect-ratio: 720 / 732; }
-#amazon-samples .samples-grid video.ar-916 { aspect-ratio: 9 / 16; }
-#amazon-samples .samples-grid figcaption {
-  margin: 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.35;
 }
 #amazon-samples .samples-feature {
   margin: 18px auto 0;
@@ -1102,9 +1068,10 @@ button.tip-copy.is-copied {
   text-align: center;
 }
 #amazon-samples .samples-note {
-  margin: 16px 0 0;
+  margin: 6px 0 0;
   color: var(--faint);
   font: 12px/1.4 var(--mono);
+  text-align: center;
 }
 #amazon-samples .samples-bot {
   margin: 14px 0 0;
@@ -1116,15 +1083,6 @@ button.tip-copy.is-copied {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 14px;
-}
-@media (min-width: 700px) {
-  #amazon-samples .samples-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (min-width: 980px) {
-  #amazon-samples .samples-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (min-width: 1100px) {
-  #amazon-samples .samples-grid { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
 }
 @media (max-width: 620px) {
   #amazon-samples { padding: 18px; box-shadow: 4px 4px 0 var(--acc2, var(--accent-dim)); }
